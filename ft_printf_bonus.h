@@ -6,14 +6,14 @@
 /*   By: dongjle2 <dongjle2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:05:02 by dongjle2          #+#    #+#             */
-/*   Updated: 2024/03/15 16:13:30 by dongjle2         ###   ########.fr       */
+/*   Updated: 2024/04/02 13:13:54 by dongjle2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_BONUS_H
 # define FT_PRINTF_BONUS_H
 # include <stdarg.h>
-# include "libft/libft.h"
+# include "./libft.h"
 # include "typedef.h"
 # define FORMATS "cspdiuxX%"
 # define FLAGS "+ -#0"
