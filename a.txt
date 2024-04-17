@@ -1,0 +1,11 @@
+8
+num pipes: 5
+total pids 5
+first pipe_idx 0
+pipe_idx 1
+pipe_idx 2
+pipe_idx 3
+*input.pcnt_cmds; 1
+*input.pcnt_cmds; 2
+*input.pcnt_cmds; 3
+last pipe_idx 4
