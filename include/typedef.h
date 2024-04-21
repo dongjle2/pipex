@@ -6,12 +6,14 @@
 /*   By: dongjle2 <dongjle2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 20:34:43 by dongjle2          #+#    #+#             */
-/*   Updated: 2024/04/17 00:55:12 by dongjle2         ###   ########.fr       */
+/*   Updated: 2024/04/19 22:25:01 by dongjle2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPEDEF_H
 # define TYPEDEF_H
+
+#include <sys/types.h>
 
 typedef union u_nums
 {
@@ -54,6 +56,7 @@ typedef struct s_input
 	char		**cmds;
 	char		***cmds_split;
 	int			num_cmds;
+	int			cnt_cmds;
 }	t_input;
 
 typedef struct s_pipes
@@ -76,5 +79,12 @@ typedef struct s_heredoc
 	char	*cmd1;
 	char	*file;
 }	t_heredoc;
+
+typedef struct s_structs
+{
+	t_input	input;
+	t_pipes	pipes;
+	t_pids	pids;
+}	t_structs;
 #endif
 

@@ -6,15 +6,15 @@
 /*   By: dongjle2 <dongjle2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:31:30 by dongjle2          #+#    #+#             */
-/*   Updated: 2024/04/17 01:35:36 by dongjle2         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:26:10 by dongjle2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
-#include "typedef.h"
+#include "include/libft.h"
+#include "include/typedef.h"
 #include <fcntl.h>
 #include <stdio.h>
-#include "pipex.h"
+#include "include/pipex.h"
 
 int	parse_strlen(const char *s)
 {

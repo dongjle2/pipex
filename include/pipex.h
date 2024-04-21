@@ -6,7 +6,7 @@
 /*   By: dongjle2 <dongjle2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 13:10:00 by dongjle2          #+#    #+#             */
-/*   Updated: 2024/04/17 00:44:00 by dongjle2         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:28:44 by dongjle2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,18 @@ int		fill_exec_argv(t_input *input, char **full_path, char ***args);
 void	exec_cmd(t_pids *pids, t_input *input, t_pipes *pipes);
 void	set_heredoc_input(t_heredoc *input, char *argv[]);
 void	save_heredoc_input(t_heredoc *input);
-void	run_cmd1(int pipe_fd[2], t_heredoc *input);
-void	run_cmd(int pipe_fd[2], t_heredoc *input);
+void	run_cmd1(int pipe_fd[2], t_heredoc input);
+void	run_cmd(int pipe_fd[2], t_heredoc input);
 void	exec_heredoc(char *argv[]);
 void	free_2d_arr(char **arr);
 void	free_mallocs(t_input *input, t_pipes *pipes, t_pids *pids);
 ssize_t	safe_write(char *s, int fd);
 void	free_t_input(t_input *input);
 int		set_t_input(t_input *input, int argc, char *argv[]);
-
+void	init_structs(t_structs *structs, int argc);
+void	pipeline(t_pids *pids, t_input *input, t_pipes *pipes);
+void	wait_and_free(t_pids *pids, t_input *input, t_pipes *pipes);
+void	free_t_input(t_input *input);
+void	free_mallocs(t_input *input, t_pipes *pipes, t_pids *pids);
+void	free_2d_arr(char **arr);
+void	sys_err(int err_type);

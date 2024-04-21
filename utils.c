@@ -6,11 +6,11 @@
 /*   By: dongjle2 <dongjle2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:38:16 by dongjle2          #+#    #+#             */
-/*   Updated: 2024/04/17 01:35:59 by dongjle2         ###   ########.fr       */
+/*   Updated: 2024/04/20 00:22:24 by dongjle2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "include/pipex.h"
 #include <stdio.h>
 #include <sys/wait.h>
 
@@ -23,9 +23,12 @@ void	pipeline(t_pids *pids, t_input *input, t_pipes *pipes)
 	{
 		pids->arr[++pids->idx] = fork();
 		if (pids->arr[pids->idx] == 0)
-			exec_cmd(&pids, &input, &pipes);
+			exec_cmd(pids, input, pipes);
 		else
+		{
 			pipes->cur++;
+			input->cnt_cmds++;
+		}
 		i++;
 	}
 }
@@ -51,6 +54,7 @@ int	create_pipe(t_pipes *pipes, int num_pipes)
 		perror("Pipe");
 		return (1);
 	}
+	return (0);
 }
 
 int	close_pipes(t_pipes *pipes)

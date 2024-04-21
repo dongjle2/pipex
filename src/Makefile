@@ -19,14 +19,14 @@ NAME := libftprintf.a
 
 all: $(NAME)
 
-$(LIBFT): 
+$(LIBFT):
 ifeq (,$(wildcard $(LIBFT)))
 	make -C $(LIBFT_DIR) all
 endif
 
 OBJS_LIST := $(OBJS_BONUS)
 
-$(NAME): $(OBJS_LIST)
+$(NAME): $(OBJS_LIST) $(LIBFT)
 	cp $(LIBFT) ./$(NAME)
 	ar crs $@ $(OBJS_BONUS)
 
@@ -38,9 +38,9 @@ clean:
 	rm -f *.o
 
 re: fclean
-	make all
+	all
 
 fclean: clean
 	rm -f $(NAME)
-
+	rm -f $(LIBFT)
 .PHONY : all bonus clean fclean re

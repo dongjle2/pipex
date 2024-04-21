@@ -6,11 +6,11 @@
 /*   By: dongjle2 <dongjle2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 00:29:45 by dongjle2          #+#    #+#             */
-/*   Updated: 2024/04/17 00:55:16 by dongjle2         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:44:23 by dongjle2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "typedef.h"
+#include "include/typedef.h"
 
 void	init_t_pids(t_pids *pids)
 {
@@ -25,6 +25,7 @@ void	init_t_input(t_input *input, int argc)
 	input->cmds = (void *)0;
 	input->cmds_split = (void *)0;
 	input->num_cmds = argc - 3;
+	input->cnt_cmds = 0;
 }
 
 void	init_t_pipes(t_pipes *pipes)
@@ -34,9 +35,9 @@ void	init_t_pipes(t_pipes *pipes)
 	pipes->fd = (void *)0;
 }
 
-void	init_structs(t_pids *pids, t_input *input, t_pipes *pipes, int argc)
+void	init_structs(t_structs *structs, int argc)
 {
-	init_t_input(input, argc);
-	init_t_pids(pids);
-	init_t_pipes(pipes);
+	init_t_input(&structs->input, argc);
+	init_t_pids(&structs->pids);
+	init_t_pipes(&structs->pipes);
 }

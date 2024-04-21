@@ -6,13 +6,13 @@
 /*   By: dongjle2 <dongjle2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 19:24:58 by dongjle2          #+#    #+#             */
-/*   Updated: 2024/04/17 00:14:21 by dongjle2         ###   ########.fr       */
+/*   Updated: 2024/04/20 00:22:35 by dongjle2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "include/pipex.h"
 #include <stdio.h>
-#include "./libft.h"
+#include "include/libft.h"
 
 extern char	**environ;
 
@@ -89,13 +89,13 @@ int	fill_exec_argv(t_input *input, char **full_path, char ***args)
 	if (*args == NULL)
 		return (1);
 	(*args)[0] = *full_path;
+	return (0);
 }
 
 int	set_t_input(t_input *input, int argc, char *argv[])
 {
 	int	ret_status;
 
-	init_t_input(input, argc);
 	ret_status = save_t_input(input, argc, argv);
 	if(ret_status == 0)
 		return (0);
@@ -112,5 +112,5 @@ int	set_t_input(t_input *input, int argc, char *argv[])
 		input->cmds = NULL;
 		free_t_input(input);
 	}
-	return (1);
+	return (0);
 }

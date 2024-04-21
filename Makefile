@@ -1,4 +1,4 @@
-SRCS_MAND := get_path.c parse.c pipex.c utils.c heredoc.c
+SRCS_MAND := get_path.c parse.c pipex.c utils.c heredoc.c free_functions.c init.c sys_err.c
 OBJS_MAND := $(SRCS_MAND:.c=.o)
 
 SRCS_BONUS := fmt_s_bonus.c fmt_u_bonus.c fmt_x_bonus.c \

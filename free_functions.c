@@ -6,11 +6,12 @@
 /*   By: dongjle2 <dongjle2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:39:24 by dongjle2          #+#    #+#             */
-/*   Updated: 2024/04/17 00:48:24 by dongjle2         ###   ########.fr       */
+/*   Updated: 2024/04/19 22:33:18 by dongjle2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "include/pipex.h"
+#include <sys/wait.h>
 
 void	wait_and_free(t_pids *pids, t_input *input, t_pipes *pipes)
 {
@@ -38,7 +39,7 @@ void	free_t_input(t_input *input)
 	int	j;
 
 	i = 0;
-	while (i < input->cnt_cmds)
+	while (i < input->num_cmds)
 	{
 		j = 0;
 		while (input->cmds_split[i][j])
